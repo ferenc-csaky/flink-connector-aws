@@ -113,61 +113,6 @@ under the License.
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>wagon-maven-plugin</artifactId>
-                <version>2.0.2</version>
-                <executions>
-                    <execution>
-                        <id>download-install</id>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>download-single</goal>
-                        </goals>
-                        <configuration>
-                            <url>https://raw.githubusercontent.com/apache/flink-connector-shared-utils/ci_utils/python/install_command.sh</url>
-                            <toDir>${project.basedir}/dev</toDir>
-                            <skip>${python.infra.download.skip}</skip>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>download-lint</id>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>download-single</goal>
-                        </goals>
-                        <configuration>
-                            <url>https://raw.githubusercontent.com/apache/flink-connector-shared-utils/ci_utils/python/lint-python.sh</url>
-                            <toDir>${project.basedir}/dev</toDir>
-                            <skip>${python.infra.download.skip}</skip>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>download-build-wheels</id>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>download-single</goal>
-                        </goals>
-                        <configuration>
-                            <url>https://raw.githubusercontent.com/apache/flink-connector-shared-utils/ci_utils/python/build-wheels.sh</url>
-                            <toDir>${project.basedir}/dev</toDir>
-                            <skip>${python.infra.download.skip}</skip>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>download-build-version-header</id>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>download-single</goal>
-                        </goals>
-                        <configuration>
-                            <url>https://raw.githubusercontent.com/apache/flink-connector-shared-utils/ci_utils/python/glibc_version_fix.h</url>
-                            <toDir>${project.basedir}/dev</toDir>
-                            <skip>${python.infra.download.skip}</skip>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
     </build>
 </project>
