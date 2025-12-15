@@ -94,8 +94,8 @@ def prepare_pyflink_dir():
 print("Python version used to package: " + sys.version)
 
 # Python version check
-if sys.version_info < (3, 7):
-    print("Python versions prior to 3.7 are not supported for PyFlink.",
+if sys.version_info < (3, 8):
+    print("Python versions prior to 3.8 are not supported for PyFlink.",
           file=sys.stderr)
     sys.exit(-1)
 
@@ -132,7 +132,7 @@ setup(
     license='https://www.apache.org/licenses/LICENSE-2.0',
     author='Apache Software Foundation',
     author_email='dev@flink.apache.org',
-    python_requires='>=3.7',
+    python_requires='>=3.8',
     install_requires=[flink_dependency],
     description='Apache Flink Python AWS Connector API',
     long_description=long_description,
@@ -144,10 +144,10 @@ setup(
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'License :: OSI Approved :: Apache Software License',
-        'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
-        'Programming Language :: Python :: 3.10']
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11']
 )
 
 print("\nFlink AWS connector package is ready\n")
